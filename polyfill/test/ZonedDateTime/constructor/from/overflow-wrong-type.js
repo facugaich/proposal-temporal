@@ -54,6 +54,8 @@ assert.throws(RangeError, () => Temporal.ZonedDateTime.from(propertyBag, { overf
 const expected = [
   "get overflow.toString",
   "call overflow.toString",
+  "get overflow.toString",
+  "call overflow.toString",
 ];
 const actual = [];
 const observer = TemporalHelpers.toPrimitiveObserver(actual, "constrain", "overflow");

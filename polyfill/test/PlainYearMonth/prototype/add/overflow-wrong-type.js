@@ -37,6 +37,8 @@ assert.throws(RangeError, () => yearmonth.add(duration, { overflow: {} }), "plai
 const expected = [
   "get overflow.toString",
   "call overflow.toString",
+  "get overflow.toString",
+  "call overflow.toString",
 ];
 const actual = [];
 const observer = TemporalHelpers.toPrimitiveObserver(actual, "constrain", "overflow");

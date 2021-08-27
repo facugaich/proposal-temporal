@@ -107,12 +107,10 @@ export class PlainYearMonth {
     const sign = ES.DurationSign(years, months, weeks, days, 0, 0, 0, 0, 0, 0);
     const day = sign < 0 ? ES.CalendarDaysInMonth(calendar, this) : 1;
     const startDate = ES.DateFromFields(calendar, { ...fields, day });
-    const overflow = ES.ToTemporalOverflow(options);
-    let optionsCopy = { overflow };
-    const addedDate = ES.CalendarDateAdd(calendar, startDate, { ...duration, days }, optionsCopy);
+    const optionsCopy = { ...options };
+    const addedDate = ES.CalendarDateAdd(calendar, startDate, { ...duration, days }, options);
     const addedDateFields = ES.ToTemporalYearMonthFields(addedDate, fieldNames);
 
-    optionsCopy = { overflow };
     return ES.YearMonthFromFields(calendar, addedDateFields, optionsCopy);
   }
   subtract(temporalDurationLike, options = undefined) {
@@ -141,12 +139,10 @@ export class PlainYearMonth {
     const sign = ES.DurationSign(years, months, weeks, days, 0, 0, 0, 0, 0, 0);
     const day = sign < 0 ? ES.CalendarDaysInMonth(calendar, this) : 1;
     const startDate = ES.DateFromFields(calendar, { ...fields, day });
-    const overflow = ES.ToTemporalOverflow(options);
-    let optionsCopy = { overflow };
-    const addedDate = ES.CalendarDateAdd(calendar, startDate, { ...duration, days }, optionsCopy);
+    const optionsCopy = { ...options };
+    const addedDate = ES.CalendarDateAdd(calendar, startDate, { ...duration, days }, options);
     const addedDateFields = ES.ToTemporalYearMonthFields(addedDate, fieldNames);
 
-    optionsCopy = { overflow };
     return ES.YearMonthFromFields(calendar, addedDateFields, optionsCopy);
   }
   until(other, options = undefined) {

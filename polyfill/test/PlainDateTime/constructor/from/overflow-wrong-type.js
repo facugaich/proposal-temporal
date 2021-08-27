@@ -53,6 +53,8 @@ assert.throws(RangeError, () => Temporal.PlainDateTime.from(propertyBag, { overf
 const expected = [
   "get overflow.toString",
   "call overflow.toString",
+  "get overflow.toString",
+  "call overflow.toString",
 ];
 const actual = [];
 const observer = TemporalHelpers.toPrimitiveObserver(actual, "constrain", "overflow");
